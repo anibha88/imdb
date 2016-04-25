@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for(@play, :html => {class: "form-horizontal", role: "form"}) do  |f| %>
+
+      <% if @play.errors.any? %>
+        <div class="panel panel-danger col-md-offset-1">
+          <div class="panel-heading">
+            <h2 class="panel-title">
+              <%= pluralize(@play.errors.count,"error") %>
+              prohibited this article from being saved: 
+            </h2>
+
+            <div class="panel-body">
+              <ul>
+                <% @play.errors.full_messages.each do |msg| %>
+                  <li>
+                    <%= msg %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      
+      <div class="form-group">
+        <div class="control-label col-md-1">
+          <%= f.label :play_title, "Play Title" %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_field :title, class: 'form-control', placeholder: 'Title of article', autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-md-1">
+          <%= f.label :play_description %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_area :description, rows: 10, class: 'form-control', placeholder: 'Body of article' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-md-1">
+          <%= f.label :play_director %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_area :director, rows: 10, class: 'form-control', placeholder: 'Body of article' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-offset-1 col-md-11">
+          <%= f.submit class: 'btn btn-primary btn-lg pull-right' %>
+        </div>
+      </div>
+    <% end %>
+    
+  </div>
+</div>
