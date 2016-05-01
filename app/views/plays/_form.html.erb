@@ -55,6 +55,7 @@
           <%= f.collection_select :category_id, @categories, :id, :name, { prompt: "Select" }, class: 'form-control' %>
         </div>
       </div>
+      <%= f.file_field :play_img %>
       <div class="form-group">
         <div class="col-md-offset-1 col-md-11">
           <%= f.submit class: 'btn btn-primary btn-lg pull-right' %>
