@@ -9,7 +9,7 @@
           <%= @play.title %>
         </h2>
         <h3 class="play-director">
-          <span> From </span>
+          <span> <em> From: </em> </span>
           <%= @play.director %>
         </h3>
         <h4 class="play-director"> <%=  @play.category.name %> </h4>
@@ -17,6 +17,18 @@
           <%= @play.description %>
         </p> 
     </div>   
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="reviews">
+      <h1> Reviews </h1>
+        <%= render @play.reviews %>
+          <div>
+            <%= link_to 'Add reviews', new_play_review_path(@play), class: 'btn-custom' %>
+          </div>
+    </div>
   </div>
 </div>
 
