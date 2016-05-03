@@ -6,7 +6,7 @@
   <div class="row">
     <% @plays.each do |play| %>
       <div class="col-md-3">
-        <h2> <%= link_to play.title, play_path(play) %></h2>
+        <!-- <h2> <%#= link_to play.title, play_path(play) %></h2> -->
           <a href="/plays/<%= play.id %>">
             <%= image_tag play.play_img.url(:play_index), class: "play" %>
           </a>
