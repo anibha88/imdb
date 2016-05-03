@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-11">
           <div id="rating-form">
-            <%= f.text_field :rating, class: 'form-control', placeholder: 'Enter your rating', autofocus: true %>
+            <%#= f.text_field :rating, class: 'form-control', placeholder: 'Enter your rating', autofocus: true %>
           </div>
         </div>
       </div>
@@ -29,6 +29,13 @@
         </div>
       </div>
     <% end %>
+
+    <script>
+      $('#rating-form').raty({
+        path: '/assets/',
+        scoreName: 'review[rating]'
+      });
+    </script>
     
   </div>
 </div>
